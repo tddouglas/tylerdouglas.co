@@ -47,6 +47,8 @@ Now that we have a work node application, we are going to want to deploy it to L
 - Add new key to your authorized_keys file
     - `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
     - This will add the newely generated public key to your authorized keys file. This file by default contains the amazon `LightsailDefaultKeyPair` so now you should see two keys included in there.
+- Convert the SSH private key from OPENSSL format to RSA format so git workflow can accept it
+    - `ssh-keygen -p -m PEM -f ~/.ssh/id_rsa`
 
 - Create empty github repository on your VPS
 - Configure post-receive hook in empty repository and make it executable
