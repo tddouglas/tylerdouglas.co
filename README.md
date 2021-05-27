@@ -44,7 +44,10 @@ Now that we have a work node application, we are going to want to deploy it to L
 - First off, you will need to commit your above project to an external repository. For this project, I'm using [GitHub](). There are loads of examples out there on how to do this, so if you're not familiar with commiting a project to GitHub, I recommend checking out [this tutoria](). 
 - Generate SSH key on your VPS
     - `ssh-keygen -t rsa -b 4096 -C "test@example.com"`
-    
+- Add new key to your authorized_keys file
+    - `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
+    - This will add the newely generated public key to your authorized keys file. This file by default contains the amazon `LightsailDefaultKeyPair` so now you should see two keys included in there.
+
 - Create empty github repository on your VPS
 - Configure post-receive hook in empty repository and make it executable
 - Add remote repository on VPS to your local repository
