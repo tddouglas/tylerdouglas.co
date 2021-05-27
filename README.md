@@ -3,6 +3,20 @@ tylerdouglas.co source code
 
 # Website Creation Steps
 
+## Assumptions
+- Moderate bash/programming experience 
+- You've already signed up for Lightsail
+
+## Setup connection to VPS
+- Get Amazon Lightsail keypair
+    - In your lightsail portal, click Account >> Account >> SSH keys
+    - Download the default private key by clicking the "Download" button
+    - If you're on mac like me, you won't be able to immediately import this key due to permission issues. You will want to right click on the key file, click "Get Info" and remove the "everyone" and "staff" sharing permissions and change your user's(with the (Me) next to it) sharing permissions to read only. [TODO figure out chmod command for this]
+    - Next import the key via `ssh-add -K {path_to_key}/LightsailDefaultPrivateKey-us-west-2.pem`
+    - Retrieve your VPS' public IP address via your Amazon Lightsail portal homepage. 
+    - Now you should be able to log into your VPS locally by running the following command in your terminal:
+        - `ssh -i ~/.ssh/LightsailDefaultKey-us-west-2.pem ubuntu@52.40.38.253`
+
 ## Install node
 - Linux (installs NPM too):
     - `curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash`
@@ -28,7 +42,14 @@ tylerdouglas.co source code
 ## Deploying your Node project to Amazon Lightsail
 Now that we have a work node application, we are going to want to deploy it to Lightsail. 
 - First off, you will need to commit your above project to an external repository. For this project, I'm using [GitHub](). There are loads of examples out there on how to do this, so if you're not familiar with commiting a project to GitHub, I recommend checking out [this tutoria](). 
-- 
+- Generate SSH key on your VPS
+    - `ssh-keygen -t rsa -b 4096 -C "test@example.com"`
+    
+- Create empty github repository on your VPS
+- Configure post-receive hook in empty repository and make it executable
+- Add remote repository on VPS to your local repository
+- Push to your production server
+- More details [here](https://gist.github.com/noelboss/3fe13927025b89757f8fb12e9066f2fa) and [here](https://francoisromain.medium.com/vps-deploy-with-git-fea605f1303b)
 
 
 ## Configure Nginx
