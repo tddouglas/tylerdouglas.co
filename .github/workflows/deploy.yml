@@ -20,7 +20,7 @@ jobs:
         PASSPHRASE: ${{ secrets.PASSPHRASE }}
       with:
         source: "."
-        target: "/var/www/mywebsite"
+        target: "/home/ubuntu/tylerdouglas.co"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
