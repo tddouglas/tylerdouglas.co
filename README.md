@@ -7,15 +7,6 @@ tylerdouglas.co source code
 - Moderate bash/programming experience 
 - You've already signed up for Lightsail
 
-## Setup connection to VPS
-- Get Amazon Lightsail keypair
-    - In your lightsail portal, click Account >> Account >> SSH keys
-    - Download the default private key by clicking the "Download" button
-    - If you're on mac like me, you won't be able to immediately import this key due to permission issues. You will want to right click on the key file, click "Get Info" and remove the "everyone" and "staff" sharing permissions and change your user's(with the (Me) next to it) sharing permissions to read only. [TODO figure out chmod command for this]
-    - Next import the key via `ssh-add -K {path_to_key}/LightsailDefaultPrivateKey-us-west-2.pem`
-    - Retrieve your VPS' public IP address via your Amazon Lightsail portal homepage. 
-    - Now you should be able to log into your VPS locally by running the following command in your terminal:
-        - `ssh -i ~/.ssh/LightsailDefaultKey-us-west-2.pem ubuntu@52.40.38.253`
 
 ## Install node
 - Linux (installs NPM too):
@@ -24,10 +15,12 @@ tylerdouglas.co source code
     - `brew install node@16.1`
     - `brew install npm@7.11.2`
 
+
 ## Install Express
 - `npm install express`
 - `npm install -g express-generator`
     - generator used to create skeleton boilor plate for express project
+
 
 ## Setup and Run Node Template
 - `express --view=hbs {{parent_folder}}`
@@ -37,6 +30,20 @@ tylerdouglas.co source code
     - install node dependancies
 - run `DEBUG={{parent_folder}}:* npm start` to start website
     - navigate to localhost:3000 to view
+
+
+## Push project to Gitub
+- TODO: Github push instructions
+
+## Setup connection to VPS
+- Get Amazon Lightsail keypair
+    - In your lightsail portal, click Account >> Account >> SSH keys
+    - Download the default private key by clicking the "Download" button
+    - If you're on mac like me, you won't be able to immediately import this key due to permission issues. You will want to right click on the key file, click "Get Info" and remove the "everyone" and "staff" sharing permissions and change your user's(with the (Me) next to it) sharing permissions to read only. [TODO figure out chmod command for this]
+    - Next import the key via `ssh-add -K {path_to_key}/LightsailDefaultPrivateKey-us-west-2.pem`
+    - Retrieve your VPS' public IP address via your Amazon Lightsail portal homepage. 
+    - Now you should be able to log into your VPS locally by running the following command in your terminal:
+        - `ssh -i ~/.ssh/LightsailDefaultKey-us-west-2.pem ubuntu@52.40.38.253`
 
 
 ## Deploying your Node project to Amazon Lightsail
@@ -50,11 +57,19 @@ Now that we have a work node application, we are going to want to deploy it to L
 - Convert the SSH private key from OPENSSL format to RSA format so git workflow can accept it
     - `ssh-keygen -p -m PEM -f ~/.ssh/id_rsa`
 
-- Create empty github repository on your VPS
-- Configure post-receive hook in empty repository and make it executable
-- Add remote repository on VPS to your local repository
-- Push to your production server
-- More details [here](https://gist.github.com/noelboss/3fe13927025b89757f8fb12e9066f2fa) and [here](https://francoisromain.medium.com/vps-deploy-with-git-fea605f1303b)
+Now we will be using Github Actions to automate deployment of our application to our VPS whenever we push to the main branch. I chose to use Github Actions over git hooks due to ease of use (more readable in my mind) and greater functionality if we want to add future CI features like built in testing.
+
+- From your root directory on your local machine, create the following file in the following location:
+    - `.github/workflows/deploy.yml file.`
+- Copy the contents of deploy.yml in this repo to your deploy.yml file
+- Access your project in Github and go to the `Settings >> Secrets` tab. Configure the following secrets:
+    - HOST = ip address used to access VPS (e.g. 52.40.38.253)
+    - Port = 22 (post for SSH)
+    - SSHKEY = Private RSA SSH key you created above
+    - USERNAME = Username used to login to VPS (e.g. ubuntu)
+    - PASSPHRASE = SSH key passphrase
+- Commit and push your github repository with the above changes and you should see it deployed to your VPS in the `target` directory!
+    - Note: If you're having any issues, look at the `Actions` tab of your github repository to see the status of your Action and where it failed. 
 
 
 ## Configure Nginx
@@ -66,4 +81,14 @@ A reverse proxy can also offer gzip compression. Compressing incoming requests c
 
 Node.js can actually serve static files, perform gzip compresion, comes with built in HTTPS support, and can run multiple instances via the `cluster` mode, yet it is best to allow your reverse proxy to handle this. Mainly because Nginx can perform these operations more efficently than Node can. 
 
-Lastly, it is worth noting that Nginx provides the added benefit of having to write less code, thereby reducing the number of potential errors. 
+Lastly, it is worth noting that Nginx provides the added benefit of having to write less code, thereby reducing the number of potential errors.
+
+- Install nginx
+    - `sudo apt update`
+    - `sudo apt install nginx`
+- Install Firewall (ufw = uncomplicated firewall)
+    - `sudo apt install ufw`
+    - `ufw allow ssh`
+        - make sure to allow SSH so you don't lock yourself out!
+- Can run `ufw app list` to show what applications can be run. We will run HTTP for a start
+    - `sudo ufw allow 'Nginx HTTP'`
