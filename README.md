@@ -57,7 +57,7 @@ Now that we have a work node application, we are going to want to deploy it to L
 - Convert the SSH private key from OPENSSL format to RSA format so git workflow can accept it
     - `ssh-keygen -p -m PEM -f ~/.ssh/id_rsa`
 
-Now we will be using Github Actions to automate deployment of our application to our VPS whenever we push to the main branch. I chose to use Github Actions over git hooks due to ease of use (more readable in my mind) and greater functionality if we want to add future CI features like built in testing.
+Now we will be using Github Actions to automate deployment of our application to our VPS whenever we push to the main branch. I chose to use Github Actions over git hooks due to ease of use (more readable in my mind) and greater functionality if we want to add future CI features like built in testing. The github action we create here uses SSH and SCP to transfer the contents of our repository to our VPS. 
 
 - From your root directory on your local machine, create the following file in the following location:
     - `.github/workflows/deploy.yml file.`
@@ -79,9 +79,11 @@ Well, Nginx provides several other benefits. First off, we will be setting Nginx
 
 A reverse proxy can also offer gzip compression. Compressing incoming requests can decrease packet size and make your application more efficent??(Investigate if this is necessary on an application of this size)
 
-Node.js can actually serve static files, perform gzip compresion, comes with built in HTTPS support, and can run multiple instances via the `cluster` mode, yet it is best to allow your reverse proxy to handle this. Mainly because Nginx can perform these operations more efficently than Node can. 
+Node.js can actually serve static files, perform gzip compresion, comes with built in HTTPS support, and can run multiple instances via the `cluster` mode, yet it is best to allow your reverse proxy to handle this. Mainly because Nginx can perform these operations more efficently than Node can. Don't believe me, check out the [Performance Comparison Here](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca).
 
 Lastly, it is worth noting that Nginx provides the added benefit of having to write less code, thereby reducing the number of potential errors.
+
+In addition to configuring Nginx as our reverse proxy, we will be using [Uncomplicated Firewall](https://wiki.ubuntu.com/UncomplicatedFirewall) (ufw) as our packet filtering solution. Ubuntu actually comes with a fairly robust packet filtering system called `netfilter` which is typically manipulated using the `iptables` suite of commands. But using exclusively iptables to manage your firewall can be a tall task, especially for beginners to network administration. Which is why we use `ufw` as it provides an easy framework for managing netfilter and simplifies some of the more complicated iptable CLI commands. 
 
 - Install nginx
     - `sudo apt update`
@@ -92,3 +94,76 @@ Lastly, it is worth noting that Nginx provides the added benefit of having to wr
         - make sure to allow SSH so you don't lock yourself out!
 - Can run `ufw app list` to show what applications can be run. We will run HTTP for a start
     - `sudo ufw allow 'Nginx HTTP'`
+- Enable ufw
+    - `sudo ufw enable`
+- Confirm SSh and HTTP are enabled by runing:
+    - `sudo ufw status`
+- Lets also check the status of nginx to make sure its running:
+    - `sudo systemctl status nginx`
+- if nginx isn't running, you can restart it with:
+    - `sudo systemctl start nginx`
+- After applying the above settings, if nginx was running, you should restart it with:
+    - `sudo service nginx restart`
+
+Now we need to setup Nginx to reverse proxy incomming traffic via HTTP (port 80) and connect it to node.js default application (port 3000)
+
+Your default nginx configuration resides in `/etc/nginx/` directory.
+
+- So we're going to edit nginx's default server block configuration file via:
+    -`sudo vim /etc/nginx/sites-available/default`
+    - Copy the below into the nginx file:
+    ```
+    server {
+        listen 80;
+
+        server_name 52.40.38.253;
+
+        location / {
+            proxy_pass http://localhost:3000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+    }
+    ```
+- Lastly, restart nginx so changes can take effect
+
+Now your application should be ready! Navigate back to your project and run node again via `DEBUG={{parent_folder}}:* npm start`. 
+Now go to your IP address in your browser and you should see your website!
+
+## Configure Process Manager for Node Application
+
+You've got your application running now, but you can't really do anything else on your VPS because the server is running in the foreground. We're going to install a process manager to daemonize the application. 
+
+- Install PM2 process manager
+    - `sudo npm install pm2 -g`
+    - `-g` is the global flag for npm
+- Start node application in daemonized capacity
+    - `pm2 start ./bin/www`
+    - You might want to run `pm2 start app.js` but that won't actually work. You should run `pm2 start` followed by the start script line you have in your `package.json` file of your project
+
+
+## Connect IP to purchased domain
+
+Now that we can access our website directly via the IP address, we are going to configure it so that we can access our website via the domain name we purchased.
+
+First off, we need to create a static IP address on our lighstail account. Right now, the IP address assigned to us is dynamic, so we will specify a static IP by logging into lighstail and navigating to Networking >> Create static IP. 
+
+Name your static IP - I named mine `tylerdouglas.co_staticIP0` and then save the static IP - `54.244.36.99`
+
+After you setup your staticIP, you will no longer be able to connect to your instance via the same ssh command as the ip has changed. Update the command to utilize the new IP address - `ssh -i ~/.ssh/LightsailDefaultKey-us-west-2.pem ubuntu@54.244.36.99`
+
+To route traffic for your domain name you purchased, like tylerdouglas.co, to your VPS, you need add a record to the Domain Name System (DNS) of your domain. You can manage the DNS records of your domain using the registrar where you registered your domain. 
+
+For me that was Bluehost. Bluehost allows you to manage your domain directly in Bluehost, however, I chose to let Cloudflare provide DNS. Bluehost actually provides a nice [pros and cons list](https://www.bluehost.com/help/article/cloud-flare-guide) for switching to Cloudfare to be my DNS provider as I thought the pros outweight the cons. 
+
+Its quite easy to Switch over to Cloudflare. First you need to create an account and then select "Add Site". You can choose the free tier and enter your domain information. You will want to point the Cloudflare Type:A field to your static IP address currently hosting your website configured above. 
+
+Once you have completed the setup on Cloudflare's side, you will need to configure the Name Server and DNS manager on your registrars site. Cloudflare does a good job at [explaining these terms here](https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare#h_60566325041543261564371). 
+
+After finalizing the configuration on yoru registrar's site, you will want to wait a couple hours for the DNS entries to update. After which, you should be able to access you website by going directly to the hostname!! No more direct IP addresses!
+
+## Configure HTTPS
+The last step here will be to configure HTTPS to ensure all traffic to our site is encrypted over TLS.
