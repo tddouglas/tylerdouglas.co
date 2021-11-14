@@ -1,9 +1,15 @@
 {
   "name": "tylerdouglas.co",
   "version": "0.0.0",
+  "proxy": "http://localhost:3000",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "startNode": "node app",
+    "server": "nodemon",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -12,5 +18,8 @@
     "hbs": "^4.1.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1"
   }
 }

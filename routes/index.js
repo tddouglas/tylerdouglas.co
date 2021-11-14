@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'tylerdouglas.co' });
 });
 
+router.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+
 module.exports = router;

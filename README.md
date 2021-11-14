@@ -24,7 +24,8 @@ tylerdouglas.co source code
 
 ## Setup and Run Node Template
 - `express --view=hbs {{parent_folder}}`
-    - using HBS as template engine as it seemed to be the most active handlebar based engine. Wanted to use handlebars as looked most similar to what I am familiar with. 
+    - using HBS as template engine as it seemed to be the most active handlebar based engine. Wanted to use handlebars as looked most similar to what I am familiar with.
+    - TODO: Due to [CVE-2021-32822](https://github.com/advisories/GHSA-7f5c-rpf4-86p8), will need to replace hbs even though we aren't serving files at the moment and I don't think the vulnerability effects me. 
 - cd `{{parent_folder}}`
 - `npm install`
     - install node dependancies
@@ -43,7 +44,7 @@ tylerdouglas.co source code
     - Next import the key via `ssh-add -K {path_to_key}/LightsailDefaultPrivateKey-us-west-2.pem`
     - Retrieve your VPS' public IP address via your Amazon Lightsail portal homepage. 
     - Now you should be able to log into your VPS locally by running the following command in your terminal:
-        - `ssh -i ~/.ssh/LightsailDefaultKey-us-west-2.pem ubuntu@52.40.38.253`
+        - `ssh -i ~/.ssh/LightsailDefaultKey-us-west-2.pem ubuntu@54.244.36.99`
 
 
 ## Deploying your Node project to Amazon Lightsail
@@ -167,3 +168,9 @@ After finalizing the configuration on yoru registrar's site, you will want to wa
 
 ## Configure HTTPS
 The last step here will be to configure HTTPS to ensure all traffic to our site is encrypted over TLS.
+
+TODO:
+
+# React PWA implementation
+Pivoting to React from Vue as it is more applicable as a skillset. Part of Vue's selling point is that it can be implemented incrementally so should be easy to pivot in the future. 
+Need to create a client folder for react front end
