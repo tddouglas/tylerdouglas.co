@@ -1,0 +1,189 @@
+/*General CSS*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+	monospace;
+}
+
+/*App Component CSS*/
+.app {
+	height: 200vh;
+}
+
+/*General Layout*/
+.l-flex {
+	display: flex;
+}
+.l-left-margin {
+	margin-left: 10vw;
+}
+
+.l-right-margin {
+	margin-right: 10vw;
+}
+
+.l-small-margin-top {
+	margin-top: 40px;
+}
+
+.l-negative-margin {
+	margin-top: -150px;
+}
+
+.l-small-padding-top {
+	padding-top: 20px;
+}
+
+.l-large-padding-top {
+	padding-top: 40px;
+}
+
+.l-small-padding-bottom {
+	padding-bottom: 20px;
+}
+
+.l-small-padding-left {
+	padding-left: 20px;
+}
+
+.c-menu-hyperlink {
+	text-decoration: none;
+	color: rgb(52, 140, 235);
+}
+
+.c-menu-hyperlink:hover {
+	text-decoration: underline;
+	color: rgb(17, 111, 212);
+}
+
+.c-img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*Navbar Component CSS*/
+#tylerdouglas-logo {
+	display: block;
+}
+
+.l-navbar {
+	align-items: center;
+	height: 80px;
+	background-color: white;
+	border-bottom: 1px solid grey;
+}
+
+.c-menu {
+	margin-left: auto;
+	display: inline-block;
+	list-style-type: none;
+}
+
+.c-menu li {
+	display: inline-block;
+	padding: 0 1.5vw;
+}
+
+/*Main Container*/
+.l-main-container {
+	flex-direction: column;
+}
+
+/*About Me*/
+.c-about-me {
+	padding-top: 20px;
+	width: 100%;
+	color: rgb(52, 140, 235);
+	background-color: white;
+	height: 1670px;
+	text-align: center;
+}
+
+.c-info {
+	height: 400px;
+	background-color: rgb(8, 14, 20);
+	color: white;
+}
+
+.c-detailed-info {
+	height: 700px;
+	border-radius: 25px;
+	border: 1px solid rgb(0, 0, 0);
+	background-color: white;
+	flex-wrap: wrap;
+	z-index: 1;
+	position: relative;
+}
+
+.l-detailed-info-column {
+	flex: 1 1 0;
+	min-width: 200px;
+}
+
+.c-border-right {
+	border-right: 1px solid grey;
+}
+
+.c-border-left {
+	border-left: 1px solid grey;
+}
+
+.c-border-bottom {
+	border-bottom: 1px solid grey;
+}
+
+#recent {
+	display: inline-block;
+	align-self: flex-end;
+	font-size: xxx-large;
+}
+
+/*Blog List*/
+.l-blog-list {
+
+}
+
+/*Footbar*/
+#footer-container {
+	height: 170px;
+	padding-top: 10px;
+	background-color: rgb(23, 24, 26);
+	text-align: center;
+	color: white;
+}
+
+.l-footer {
+	height: 140px;
+	display: grid;
+	grid-template-rows: 100px;
+	grid-template-columns: 35% 30% 35%;
+}
+
+.c-footer-grid-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	padding: 20px 50px;
+	height: 100px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.grid-item {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}
+
+#bottom_footer {
+	padding-top: 5px;
+	border-top: 1px solid grey;
+}

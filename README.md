@@ -174,3 +174,10 @@ TODO:
 # React PWA implementation
 Pivoting to React from Vue as it is more applicable as a skillset. Part of Vue's selling point is that it can be implemented incrementally so should be easy to pivot in the future. 
 Need to create a client folder for react front end
+
+## Setup React
+- We will use Facebook's default react generate to create our sample react Frontend. Run `npx create-react-app client` in your root website directory to generate a folder named `client` containing a self contained react frontend!
+  - This will create a client directory with another node_modules folder and it's own respective `package.json` and `package-lock.json`. This is OK as you are creating a separate client and server which may have their own unique dependencies.
+  - run `cd client`
+  - `npm update` to install new client dependencies
+  - `npm start` and you will see your new website at localhost:3000 
