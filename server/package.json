@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "has-ansi": "^5.0.1",
@@ -25,6 +26,6 @@
     "prettier": "2.5.0"
   },
   "prettier": {
-	"tabWidth": 4
+    "tabWidth": 4
   }
 }

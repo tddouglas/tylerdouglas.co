@@ -55,7 +55,8 @@ Now that we have a work node application, we are going to want to deploy it to L
 - Add new key to your authorized_keys file
     - `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
     - This will add the newely generated public key to your authorized keys file. This file by default contains the amazon `LightsailDefaultKeyPair` so now you should see two keys included in there.
-- Convert the SSH private key from OPENSSL format to RSA format so git workflow can accept it
+- Convert the SSH private key from OPENSSL format to RSA format so git workflow can accept it. If you are asked to 
+  enter your password, use the same password as before. 
     - `ssh-keygen -p -m PEM -f ~/.ssh/id_rsa`
 
 Now we will be using Github Actions to automate deployment of our application to our VPS whenever we push to the main branch. I chose to use Github Actions over git hooks due to ease of use (more readable in my mind) and greater functionality if we want to add future CI features like built in testing. The github action we create here uses SSH and SCP to transfer the contents of our repository to our VPS. 
@@ -74,7 +75,8 @@ Now we will be using Github Actions to automate deployment of our application to
 
 
 ## Configure Nginx
-First off, why are we using Nginx? I thought Node.js has its own webserve as we saw in the above running of our node boilerplate. 
+First off, why are we using Nginx? I thought Node.js has its own webservice as we saw in the above running of our 
+node boilerplate. 
 
 Well, Nginx provides several other benefits. First off, we will be setting Nginx up as a reverse proxy. This provides some benefits like SSL Termination. Using Nginx as a reverse proxy prevents you from managing SSL certs at the application level; checking certs into your application code base could be a security risk as well. Nginxd ensures only code written by your reverse proxy has access to your private SSL cert. 
 
@@ -181,3 +183,20 @@ Need to create a client folder for react front end
   - run `cd client`
   - `npm update` to install new client dependencies
   - `npm start` and you will see your new website at localhost:3000 
+
+
+# Configure on Nginx
+- See NPM logs at ` /home/ubuntu/.npm/_logs`
+- Commands to maybe fix my node server:
+
+npm cache clear --force
+npm install --no-progress --verbose --loglevel silly --no-optional
+
+Try:
+npm config set registry http://registry.npmjs.org
+
+curl --connect-timeout 15 https://registry.npmjs.org
+
+
+Rum both Client and Server at the same time
+- `concurrently "npm --prefix ./server/ run server" "npm --prefix ./client/ run dev"`
