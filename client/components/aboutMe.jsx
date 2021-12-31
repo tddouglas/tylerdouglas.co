@@ -20,6 +20,8 @@ export default class AboutMe extends Component {
 					className={"c-img l-large-padding-top"}
 					id={"main-graphic"}
 					alt=""
+					width={200}
+					height={200}
 				/>
 				<div className={"c-info l-small-padding-top l-small-margin-top"}>
 					<h2>Hi, I&apos;m Tyler. Welcome to my website.</h2>

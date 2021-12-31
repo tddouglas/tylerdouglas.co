@@ -10,7 +10,7 @@ class BlogPost extends Component {
 					"l-flex l-left-margin l-right-margin l-small-padding-top l-small-padding-bottom c-border-bottom"
 				}
 			>
-				<Image src={blogpost.img_src} alt={""} />
+				<Image src={blogpost.img_src} alt={""} width={300} height={200} />
 				<div className={"l-small-padding-left l-detailed-info-column"}>
 					<h1>{blogpost.title}</h1>
 					<p>Some interesting text snipped of this article I like or wrote</p>

@@ -9,16 +9,38 @@ class Footer extends Component {
 			<div id={"footer-container"}>
 				<div className={"l-footer"}>
 					<div className={"c-footer-grid-container c-border-right"}>
-						<Image src={"https://picsum.photos/20"} alt={""} />
-						<Image src={"https://picsum.photos/20"} alt={""} />
-						<Image src={"https://picsum.photos/20"} alt={""} />
-						<Image src={"https://picsum.photos/20"} alt={""} />
+						<Image
+							src={"https://picsum.photos/20"}
+							alt={""}
+							width={20}
+							height={20}
+						/>
+						<Image
+							src={"https://picsum.photos/20"}
+							alt={""}
+							width={20}
+							height={20}
+						/>
+						<Image
+							src={"https://picsum.photos/20"}
+							alt={""}
+							width={20}
+							height={20}
+						/>
+						<Image
+							src={"https://picsum.photos/20"}
+							alt={""}
+							width={20}
+							height={20}
+						/>
 					</div>
 					<Image
 						src={"https://picsum.photos/100"}
 						onClick={(event) => (window.location.href = "/aboutMe")}
 						className={"c-img c-border-right"}
 						alt=""
+						width={100}
+						height={100}
 					/>
 					<span>
 						<div className="c-footer-grid-container c-border-left">
