@@ -19,6 +19,7 @@ export default class AboutMe extends Component {
 					onClick={(event) => (window.location.href = "/aboutMe")}
 					className={"c-img l-large-padding-top"}
 					id={"main-graphic"}
+					layout={"intrinsic"}
 					alt=""
 					width={200}
 					height={200}
