@@ -10,7 +10,7 @@ export default class AboutMe extends Component {
 	render() {
 		return (
 			<div className={"c-about-me"}>
-				<h1>Something, Full-stack Developer & Enthusiast</h1>
+				<h1>Other Thing, Full-stack Developer & Enthusiast</h1>
 				<h3>
 					I design and code beautifully simple things, and I love what I do.
 				</h3>

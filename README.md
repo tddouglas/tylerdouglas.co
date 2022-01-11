@@ -144,7 +144,7 @@ You've got your application running now, but you can't really do anything else o
     - `sudo npm install pm2 -g`
     - `-g` is the global flag for npm
 - Start node application in daemonized capacity
-    - `pm2 start ./bin/www`
+    - `pm2 start npm --name "nextjs" -- start`
     - You might want to run `pm2 start app.js` but that won't actually work. You should run `pm2 start` followed by the start script line you have in your `package.json` file of your project
 
 
@@ -171,7 +171,12 @@ After finalizing the configuration on yoru registrar's site, you will want to wa
 ## Configure HTTPS
 The last step here will be to configure HTTPS to ensure all traffic to our site is encrypted over TLS.
 
-TODO:
+- By default, utilizing Cloudflare as your DNS server will encrypt the traffic between the client browser and 
+  Cloudflare. You can see this setting within your Cloudflare portal under your website >> SSL/TLS >> Overview. 
+  You can change this setting to "Full" as we are about to configure an SSL.
+- Now, if you navigate to the "Edge Certificate" section, you can see the certificate that is currently setup for your 
+  site (note, it can take up to 24 hours to be configured by Cloudflare and showup). On the Edge Certificate page, I 
+  prefer to configure "Always Use HTTPS" because why not. 
 
 # React PWA implementation
 Pivoting to React from Vue as it is more applicable as a skillset. Part of Vue's selling point is that it can be implemented incrementally so should be easy to pivot in the future. 
