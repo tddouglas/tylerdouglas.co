@@ -1,0 +1,23 @@
+{
+	"name": "fullstack-template",
+	"version": "0.1.0",
+	"description": "Template for fullstack typescript website with Vue frontend and Node/Express backend",
+	"scripts": {
+		"test": "concurrently \"npm --prefix ./server run devStart\" \"npm --prefix ./client run dev\"",
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+	},
+	"author": "Tyler Douglas",
+	"license": "ISC",
+	"devDependencies": {
+		"@rushstack/eslint-patch": "^1.1.4",
+		"@vue/eslint-config-prettier": "^7.0.0",
+		"@vue/eslint-config-typescript": "^11.0.0",
+		"concurrently": "^7.4.0",
+		"eslint": "^8.22.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-cypress": "^2.12.1",
+		"eslint-plugin-vue": "^9.3.0",
+		"prettier": "2.7.1",
+		"prettier-plugin-tailwindcss": "^0.1.13"
+	}
+}

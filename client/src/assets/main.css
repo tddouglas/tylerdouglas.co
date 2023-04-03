@@ -1,0 +1,50 @@
+/*How to use here - https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Used to set default styles/fonts for html elements*/
+@layer base {
+}
+
+/*Define custom components for your project that can be overridden by utility classes*/
+@layer components {
+	/*Slow underline expanding from middle for li items*/
+	.expand-button:hover {
+		position: relative;
+	}
+	.expand-button:hover::after {
+		@apply bg-underline dark:bg-underline;
+		left: 0;
+		right: 0;
+	}
+	.expand-button::after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		left: 51%;
+		right: 51%;
+		bottom: -9px;
+		height: 1px;
+		transition-property: left, right;
+		transition-duration: 0.4s;
+		transition-timing-function: ease-out;
+	}
+
+	/*default fonts parings */
+	.text-main {
+		@apply text-lightMain dark:text-darkMain
+	}
+
+	.text-secondary {
+		@apply text-lightSecondary dark:text-darkSecondary
+	}
+
+	.text-tertiary {
+		@apply text-lightTertiary dark:text-darkTertiary
+	}
+}
+
+/*Custom modifiers for component elements*/
+@layer utilities {
+}
