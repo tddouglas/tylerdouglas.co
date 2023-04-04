@@ -3,7 +3,6 @@
 ## Client
 
 ### TODO
-- Figure out how Tailwind works
 
 ## Server
 

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="129.25502mm"
+   height="108.3482mm"
+   viewBox="0 0 488.52292 409.50501"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="tylerdouglas_logo_design.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.96459612"
+     inkscape:cx="287.68517"
+     inkscape:cy="138.39989"
+     inkscape:window-width="1666"
+     inkscape:window-height="1360"
+     inkscape:window-x="1758"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g7023"
+     inkscape:snap-bbox="false"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-nodes="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient7155">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop7151" />
+      <stop
+         style="stop-color:#0d0a58;stop-opacity:0.80000001"
+         offset="1"
+         id="stop7153" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2895"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="20"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect2510"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2407"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,21.77077,0,1 @ F,0,0,1,0,2.6458,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1794"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1560"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1504"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,2.6458,0,1 @ F,0,0,1,0,2.6458,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1399"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,2.6458,0,1 @ F,0,0,1,0,2.6458,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1397"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,2.6458333,0,1 @ F,0,0,1,0,2.6458333,0,1 @ F,0,0,1,0,2.6458333,0,1 @ F,0,0,1,0,2.6458333,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="10"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7155"
+       id="linearGradient7157"
+       x1="62.95174"
+       y1="233.96561"
+       x2="552.01056"
+       y2="642.44788"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7155"
+       id="linearGradient926"
+       gradientUnits="userSpaceOnUse"
+       x1="62.95174"
+       y1="233.96561"
+       x2="552.01056"
+       y2="642.44788" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7155"
+       id="linearGradient928"
+       gradientUnits="userSpaceOnUse"
+       x1="62.95174"
+       y1="233.96561"
+       x2="552.01056"
+       y2="642.44788" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7155"
+       id="linearGradient930"
+       gradientUnits="userSpaceOnUse"
+       x1="62.95174"
+       y1="233.96561"
+       x2="552.01056"
+       y2="642.44788" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7155"
+       id="linearGradient932"
+       gradientUnits="userSpaceOnUse"
+       x1="62.95174"
+       y1="233.96561"
+       x2="552.01056"
+       y2="642.44788" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-117.39623,-209.62064)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="354.55255"
+       y="802.40839"
+       id="text16255"><tspan
+         sodipodi:role="line"
+         id="tspan16253"
+         x="354.55255"
+         y="802.40839" /></text>
+    <g
+       id="g7023"
+       transform="translate(54.945277,-23.844177)">
+      <g
+         id="g1190"
+         style="fill:url(#linearGradient7157);fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">
+        <g
+           id="g6934"
+           style="fill:url(#linearGradient932);fill-opacity:1">
+          <path
+             style="fill:url(#linearGradient926);fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+             id="rect31"
+             width="339.26425"
+             height="58.044712"
+             x="62.95174"
+             y="233.96561"
+             inkscape:path-effect="#path-effect1397"
+             d="m 65.597574,233.96561 333.972586,0 a 2.6458333,2.6458333 45 0 1 2.64583,2.64583 l 0,52.75305 a 2.6458333,2.6458333 135 0 1 -2.64583,2.64583 H 65.597574 a 2.6458333,2.6458333 45 0 1 -2.645834,-2.64583 l 0,-52.75305 a 2.6458333,2.6458333 135 0 1 2.645834,-2.64583 z"
+             sodipodi:type="rect" />
+          <path
+             style="fill:url(#linearGradient928);fill-opacity:1;stroke:#ffffff;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+             id="rect994"
+             width="63.479313"
+             height="301.56619"
+             x="200.84421"
+             y="292.84329"
+             inkscape:path-effect="#path-effect1399"
+             d="m 200.84421,292.84329 h 63.47931 v 298.92039 a 2.6458,2.6458 135 0 1 -2.6458,2.6458 l -58.18771,0 a 2.6458,2.6458 45 0 1 -2.6458,-2.6458 z"
+             sodipodi:type="rect" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:397.364px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;fill:url(#linearGradient930);fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
+             x="301.24936"
+             y="576.99365"
+             id="text3330"
+             transform="scale(0.89738839,1.1143447)"><tspan
+               sodipodi:role="line"
+               id="tspan3328"
+               x="301.24936"
+               y="576.99365"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:397.364px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;fill:url(#linearGradient930);fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">D</tspan></text>
+        </g>
+      </g>
+      <rect
+         style="fill:#ffffff;stroke:none;stroke-width:1.07844"
+         id="rect1178"
+         width="67.438774"
+         height="16.805527"
+         x="198.86447"
+         y="292.86719" />
+    </g>
+  </g>
+</svg>
