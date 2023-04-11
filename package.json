@@ -4,7 +4,7 @@
 	"description": "Source code for TylerDouglas.co website",
 	"scripts": {
 		"test": "concurrently \"npm --prefix ./server run devStart\" \"npm --prefix ./client run dev\" \"npm --prefix ./client run watch-css\"",
-		"live": "concurrently \"npm --prefix ./server run build\" \"npm --prefix ./client run build\" \"npm --prefix ./client run build-css\"",
+		"live": "concurrently \"npm --prefix ./server run build\" \"npm --prefix ./client run build\" && npm --prefix ./client run build-css",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
 	},
 	"author": "Tyler Douglas",
