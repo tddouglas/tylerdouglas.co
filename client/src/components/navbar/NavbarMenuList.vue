@@ -24,14 +24,17 @@
 
 <script lang="ts">
 import { defineComponent } from "vue"
+import type { PropType } from "vue"
+import type { NavMenu } from "@/components/helper/customTypes"
 import { RouterLink } from "vue-router"
 import lightDarkIcon from "@/assets/images/light_dark.svg"
 
 export default defineComponent({
 	name: "MenuList",
+	components: { RouterLink },
 	props: {
 		menuItems: {
-			type: Array,
+			type: Object as PropType<Array<NavMenu>>,
 			required: true
 		},
 		listId: {

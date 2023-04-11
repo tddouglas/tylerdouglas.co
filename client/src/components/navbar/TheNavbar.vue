@@ -1,11 +1,11 @@
 <template>
 	<nav class="mt-8 grid h-10 grid-cols-2 items-center">
 		<div class="">
-			<router-link to="/">
+			<RouterLink to="/">
 				<img :src="websiteLogo" alt="Website Logo" class="w-8" />
-			</router-link>
+			</RouterLink>
 		</div>
-		<mobile-menu
+		<MobileMenu
 			:menu-items="menuItems"
 			@update="toggleMobileMenu"
 			class="items-center"
@@ -16,11 +16,11 @@
 		v-if="showMobileMenu"
 		v-click-away="toggleMobileMenu"
 	>
-		<menu-list
+		<MenuList
 			:menuItems="menuItems"
 			listId="mobile-menu"
 			class="mb-4 md:hidden"
-		></menu-list>
+		></MenuList>
 	</div>
 	<div
 		class="absolute left-0 -z-10 w-screen border-[0.5px] border-underline"
@@ -31,14 +31,13 @@ f
 <script lang="ts">
 import { defineComponent } from "vue"
 import { RouterLink } from "vue-router"
-import MobileMenu from "@/components/navbar/MobileMenu.vue"
-import MenuList from "@/components/navbar/MenuList.vue"
+import MobileMenu from "@/components/navbar/NavbarMobileMenu.vue"
+import MenuList from "@/components/navbar/NavbarMenuList.vue"
 import websiteLogo from "@/assets/images/tylerdouglas_logo.svg"
 
 export default defineComponent({
-	name: "Navbar",
-	components: { MobileMenu, MenuList },
-	props: {},
+	name: "TheNavbar",
+	components: { MobileMenu, MenuList, RouterLink },
 	methods: {
 		toggleMobileMenu() {
 			this.showMobileMenu = !this.showMobileMenu
@@ -50,8 +49,8 @@ export default defineComponent({
 			showMobileMenu: false,
 			menuItems: [
 				{ name: "About", path: "/about" },
-				{ name: "Resume", path: "/resume" },
-				{ name: "Contact", path: "/contact" }
+				{ name: "Projects", path: "/projects" },
+				{ name: "Contact Me", path: "/contact" }
 			]
 		}
 	}

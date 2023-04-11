@@ -1,0 +1,1 @@
+import{d as o,_ as t,o as e,c as n}from"./index.a014b2e2.js";const a=o({name:"NotificationDisplay",components:{},props:{},methods:{},data(){return{}}});function s(c,i,r,p,d,f){return e(),n("div",null,"Fetch notifications from DB and display them here")}const l=t(a,[["render",s]]);export{l as default};

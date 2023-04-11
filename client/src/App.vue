@@ -2,20 +2,24 @@
 	<div
 		class="hover:lightMain-hover dark:hover:darkMain-hover container mx-auto max-w-screen-lg flex-auto font-body text-lightMain dark:text-darkMain md:px-6"
 	>
-		<Navbar />
-		<RouterView />
-		<FooterLayout />
+		<TheNavbar />
+		<main class="flex min-h-[50vh] flex-col items-center">
+			<div class="mb-10 w-3/4">
+				<router-view />
+			</div>
+		</main>
+		<TheFooter />
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
 import { RouterView } from "vue-router"
-import Navbar from "./components/navbar/Navbar.vue"
-import FooterLayout from "@/components/footer/FooterLayout.vue"
+import TheNavbar from "@/components/navbar/TheNavbar.vue"
+import TheFooter from "@/components/footer/TheFooter.vue"
 
 export default defineComponent({
-	components: { Navbar, FooterLayout, RouterView },
+	components: { TheNavbar, TheFooter, RouterView },
 	mounted() {
 		console.log("Setting initial color mode")
 		let colorPreference = localStorage.getItem("colorPreference")

@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"composite": true,
+		"module": "ESNext",
+		"target": "es2016"
+	},
+	"files": [],
+	"references": [
+		{
+			"path": "./client/tsconfig.config.json"
+		},
+		{
+			"path": "./client/tsconfig.app.json"
+		},
+		{
+			"path": "./client/tsconfig.vitest.json"
+		},
+		{
+			"path": "./server/tsconfig.json"
+		}
+	]
+}

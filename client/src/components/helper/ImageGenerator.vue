@@ -1,6 +1,6 @@
 <template>
 	<img
-		:src="picImage"
+		:src="picImage.toString()"
 		:width="width"
 		:height="!height ? width : height"
 		:alt="imgAlt"

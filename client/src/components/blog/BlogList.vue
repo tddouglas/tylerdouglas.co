@@ -1,14 +1,14 @@
 <template>
 	<div class="l-blog-list">
-		<blog-post
-			v-for="blogpost in this.blogPosts"
+		<BlogPost
+			v-for="blogpost in blogPosts"
+			:key="blogpost.id"
 			:id="blogpost.id"
 			:title="blogpost.title"
 			:date="blogpost.date"
 			:preview-image="blogpost.previewImage"
 			@onDelete="onBlogItemDelete"
 		/>
-		))}
 	</div>
 </template>
 

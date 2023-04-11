@@ -1,17 +1,17 @@
 <template>
 	<footer class="relative bottom-0 pb-4 pt-6">
 		<div class="grid grid-cols-3">
-			<div class="self-center justify-self-start text-xs">
+			<div class="text-secondary self-center justify-self-start text-xs">
 				Copyright © tylerdouglas.co. All rights reserved.
 			</div>
 			<div class="self-center justify-self-center">
-				<router-link to="/">
+				<RouterLink to="/">
 					<img
 						:src="mainLogo"
 						alt="TylerDouglas.co Logo"
 						class="w-8"
 					/>
-				</router-link>
+				</RouterLink>
 			</div>
 			<div class="self-center justify-self-end">
 				<ul class="flex list-none flex-row">
@@ -27,15 +27,13 @@
 						</router-link>
 					</li>
 					<li>
-						<router-link
-							to="https://www.linkedin.com/in/tyler-douglas/"
-						>
+						<a href="https://www.linkedin.com/in/tyler-douglas/">
 							<img
 								:src="linkedin"
 								class="ml-[8px] mt-[7px] h-[23px]"
 								alt="LinkedIn"
 							/>
-						</router-link>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -49,9 +47,8 @@ import { RouterLink } from "vue-router"
 import logo from "@/assets/images/tylerdouglas_logo.svg"
 
 export default defineComponent({
-	name: "FooterLayout",
+	name: "TheFooter",
 	components: { RouterLink },
-	props: {},
 	data() {
 		return {
 			mainLogo: logo,

@@ -7,25 +7,26 @@
 		>
 			<span class="mobile-button" />
 		</button>
-		<menu-list
+		<MenuList
 			:menuItems="menuItems"
 			listId="desktop-menu"
 			class="hidden md:block md:justify-self-start"
-		></menu-list>
+		></MenuList>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
-import MenuList from "@/components/navbar/MenuList.vue"
-import { RouterLink } from "vue-router"
+import type { PropType } from "vue"
+import type { NavMenu } from "@/components/helper/customTypes"
+import MenuList from "@/components/navbar/NavbarMenuList.vue"
 
 export default defineComponent({
 	name: "MobileMenu",
 	components: { MenuList },
 	props: {
 		menuItems: {
-			type: Array,
+			type: Object as PropType<Array<NavMenu>>,
 			required: true
 		}
 	},

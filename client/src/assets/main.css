@@ -5,6 +5,9 @@
 
 /*Used to set default styles/fonts for html elements*/
 @layer base {
+	.dark img {
+		filter: invert(90%);
+	}
 }
 
 /*Define custom components for your project that can be overridden by utility classes*/

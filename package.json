@@ -1,9 +1,10 @@
 {
-	"name": "fullstack-template",
-	"version": "0.1.0",
-	"description": "Template for fullstack typescript website with Vue frontend and Node/Express backend",
+	"name": "TylerDouglasWebsite",
+	"version": "0.2.0",
+	"description": "Source code for TylerDouglas.co website",
 	"scripts": {
-		"test": "concurrently \"npm --prefix ./server run devStart\" \"npm --prefix ./client run dev\"",
+		"test": "concurrently \"npm --prefix ./server run devStart\" \"npm --prefix ./client run dev\" \"npm --prefix ./client run watch-css\"",
+		"live": "concurrently \"npm --prefix ./server run build\" \"npm --prefix ./client run build\" \"npm --prefix ./client run build-css\"",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
 	},
 	"author": "Tyler Douglas",
@@ -12,6 +13,7 @@
 		"@rushstack/eslint-patch": "^1.1.4",
 		"@vue/eslint-config-prettier": "^7.0.0",
 		"@vue/eslint-config-typescript": "^11.0.0",
+		"typescript": "^4.8.4",
 		"concurrently": "^7.4.0",
 		"eslint": "^8.22.0",
 		"eslint-config-prettier": "^8.5.0",

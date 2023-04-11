@@ -15,7 +15,41 @@ const router = createRouter({
 			// route level code-splitting
 			// this generates a separate chunk (About.[hash].js) for this route
 			// which is lazy-loaded when the route is visited.
-			component: () => import("../components/home/AboutMe.vue")
+			component: () => import("../views/AboutMeView.vue")
+		},
+		{
+			path: "/projects",
+			name: "projects",
+			component: () => import("../views/ProjectsOverView.vue")
+			//TODO: See if children sorting works like this
+			//
+			// children: [
+			// 	{
+			// 		path: "listener",
+			// 		component: () =>
+			// 			import(
+			// 				"../components/projects/listener/NotificationDisplay.vue"
+			// 			)
+			// 	},
+			// 	{
+			// 		path: "otherProject",
+			// 		component: () =>
+			// 			import("../components/helper/ComingSoon.vue")
+			// 	}
+			// ]
+		},
+		{
+			path: "/projects/listener",
+			name: "listener",
+			component: () =>
+				import(
+					"../components/projects/listener/NotificationDisplay.vue"
+				)
+		},
+		{
+			path: "/contact",
+			name: "contact",
+			component: () => import("../views/ContactMeView.vue")
 		}
 	]
 })

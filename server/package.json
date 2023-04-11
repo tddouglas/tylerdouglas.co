@@ -4,8 +4,10 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"devStart": "nodemon bin/www.ts",
-		"start": "ts-node --esm bin/www.ts"
+		"devStart": "nodemon -r dotenv/config bin/www.ts",
+		"build": "tsc",
+		"prod": "cross-env NODE_ENV=production node -r dotenv/config dist/bin/www.js",
+		"tsProd": "ts-node --esm --transpile-only -r dotenv/config bin/www.ts"
 	},
 	"dependencies": {
 		"cookie-parser": "~1.4.4",
@@ -26,7 +28,6 @@
 		"@types/node": "^18.11.0",
 		"@types/pg": "^8.6.5",
 		"nodemon": "^2.0.20",
-		"ts-node": "^10.9.1",
-		"typescript": "^4.8.4"
+		"ts-node": "^10.9.1"
 	}
 }

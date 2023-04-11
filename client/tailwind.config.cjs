@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./src/**/*.{html,js,ts,vue}", "./index.html"],
-	darkMode: 'class',
+	darkMode: "class",
 	theme: {
 		colors: {
-			underline: "rgba(0,186,126,0.20)",
+			underline: "rgba(0,186,126,0.20)"
 		},
 		backgroundColor: ({ theme }) => ({
-			light: "rgba(235,235,235,0.9)",
+			light: "rgba(255,255,255,0.9)",
 			dark: "rgb(24, 24, 24, 1)",
-			underline: "rgba(0,186,126,0.90)",
+			underline: "rgba(0,186,126,0.90)"
 		}),
 		textColor: ({ theme }) => ({
 			// light & dark combined into 1 in main.css
@@ -21,16 +21,48 @@ module.exports = {
 			darkMain: "rgba(0, 189, 126, 1)",
 			darkSecondary: "rgba(130,189,130,0.6)",
 			darkTertiary: "rgba(130,189,130,0.4)",
-			...theme('colors')
+			...theme("colors")
 		}),
 		fontFamily: {
-			heading: ["'SF Pro'", "'Inter'", '-apple-system', 'BlinkMacSystemFont' ,'Segoe' +
-			' UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell','Fira' +
-			' Sans','Droid Sans', 'Helvetica Neue','sans-serif'],
-			body: ["'SF Pro'", "'Inter'", '-apple-system', 'BlinkMacSystemFont' ,'Segoe' +
-			' UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell','Fira' +
-			' Sans','Droid Sans', 'Helvetica Neue','sans-serif'],
-			mono: ['\"SFMono-Regular\"','Menlo','Monaco','Consolas','\"Liberation Mono\"','\"Courier New\"','monospace'],
+			heading: [
+				"'SF Pro'",
+				"'Inter'",
+				"-apple-system",
+				"BlinkMacSystemFont",
+				"Segoe" + " UI",
+				"Roboto",
+				"Oxygen",
+				"Ubuntu",
+				"Cantarell",
+				"Fira" + " Sans",
+				"Droid Sans",
+				"Helvetica Neue",
+				"sans-serif"
+			],
+			body: [
+				"'SF Pro'",
+				"'Inter'",
+				"-apple-system",
+				"BlinkMacSystemFont",
+				"Segoe" + " UI",
+				"Roboto",
+				"Oxygen",
+				"Ubuntu",
+				"Cantarell",
+				"Fira" + " Sans",
+				"Droid Sans",
+				"Helvetica Neue",
+				"sans-serif"
+			],
+			mono: [
+				'"SFMono-Regular"',
+				"Menlo",
+				"Monaco",
+				"Consolas",
+				'"Liberation Mono"',
+				'"Courier New"',
+				"monospace"
+			],
 			sans: ["Graphik", "sans-serif"],
 			serif: ["Merriweather", "serif"]
 		},
