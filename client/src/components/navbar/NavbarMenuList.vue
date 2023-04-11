@@ -4,6 +4,7 @@
 			v-for="item in menuItems"
 			:key="item.name"
 			class="expand-button mx-auto my-8 w-fit text-center md:m-2 md:inline-block"
+			@click="toggleMobileMenu"
 		>
 			<RouterLink class="mx-2" :to="item.path"
 				>{{ item.name }}
@@ -42,6 +43,7 @@ export default defineComponent({
 			required: true
 		}
 	},
+	emits: ["update"],
 	methods: {
 		changeColorMode() {
 			console.log("Changing color mode")
@@ -54,6 +56,9 @@ export default defineComponent({
 				localStorage.setItem("colorPreference", "light")
 				this.darkMode = false
 			}
+		},
+		toggleMobileMenu() {
+			this.$emit("update")
 		}
 	},
 	data() {

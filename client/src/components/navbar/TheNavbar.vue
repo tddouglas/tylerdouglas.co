@@ -20,6 +20,7 @@
 			:menuItems="menuItems"
 			listId="mobile-menu"
 			class="mb-4 md:hidden"
+			@update="toggleMobileMenu"
 		></MenuList>
 	</div>
 	<div

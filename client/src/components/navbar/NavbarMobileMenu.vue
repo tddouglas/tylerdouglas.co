@@ -11,6 +11,7 @@
 			:menuItems="menuItems"
 			listId="desktop-menu"
 			class="hidden md:block md:justify-self-start"
+			@update="toggleMobileMenu"
 		></MenuList>
 	</div>
 </template>

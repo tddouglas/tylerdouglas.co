@@ -20,14 +20,14 @@
 		@apply bg-underline dark:bg-underline;
 		left: 0;
 		right: 0;
+		bottom: -9px;
+
 	}
 	.expand-button::after {
 		content: "";
-		display: inline-block;
 		position: absolute;
 		left: 51%;
 		right: 51%;
-		bottom: -9px;
 		height: 1px;
 		transition-property: left, right;
 		transition-duration: 0.4s;

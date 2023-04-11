@@ -1,10 +1,10 @@
 <template>
 	<div
-		class="hover:lightMain-hover dark:hover:darkMain-hover container mx-auto max-w-screen-lg flex-auto font-body text-lightMain dark:text-darkMain md:px-6"
+		class="hover:lightMain-hover dark:hover:darkMain-hover container mx-auto max-w-screen-lg flex-auto px-2 font-body text-lightMain dark:text-darkMain md:px-6"
 	>
 		<TheNavbar />
 		<main class="flex min-h-[50vh] flex-col items-center">
-			<div class="mb-10 w-3/4">
+			<div class="mb-10 w-10/12 md:w-3/4">
 				<router-view />
 			</div>
 		</main>
