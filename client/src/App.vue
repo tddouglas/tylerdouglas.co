@@ -25,12 +25,19 @@ export default defineComponent({
 		let colorPreference = localStorage.getItem("colorPreference")
 		if (colorPreference) {
 			if (colorPreference === "dark") {
-				document.documentElement.classList.add("dark")
+				this.setDarkMode()
 			}
+		} else {
+			this.setDarkMode()
 		}
 		// If set in local storage, use that mode
-		// El if browser has defined color mode, use that one
-		// else, default to something
+		// Else default to dark mode
+		// TODO: Set default to computer light mode preference
+	},
+	methods: {
+		setDarkMode() {
+			document.documentElement.classList.add("dark")
+		}
 	},
 	data() {
 		return {}

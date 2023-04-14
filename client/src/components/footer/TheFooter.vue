@@ -15,17 +15,16 @@
 			</div>
 			<div class="self-center justify-self-end">
 				<ul class="flex list-none flex-row">
-					<li>
-						<!--TODO: change to my hosted assets-->
-						<router-link to="">
-							<img :src="instagram" class="h-9" alt="Instagram" />
-						</router-link>
-					</li>
-					<li>
-						<router-link to="">
-							<img :src="twitter" class="h-9" alt="Twitter" />
-						</router-link>
-					</li>
+					<!--					<li>-->
+					<!--						<router-link to="">-->
+					<!--							<img :src="instagram" class="h-9" alt="Instagram" />-->
+					<!--						</router-link>-->
+					<!--					</li>-->
+					<!--					<li>-->
+					<!--						<router-link to="">-->
+					<!--							<img :src="twitter" class="h-9" alt="Twitter" />-->
+					<!--						</router-link>-->
+					<!--					</li>-->
 					<li>
 						<a href="https://www.linkedin.com/in/tyler-douglas/">
 							<img

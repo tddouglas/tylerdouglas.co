@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.96459612"
-     inkscape:cx="287.68517"
-     inkscape:cy="138.39989"
+     inkscape:zoom="3.8583845"
+     inkscape:cx="262.15635"
+     inkscape:cy="123.49728"
      inkscape:window-width="1666"
      inkscape:window-height="1360"
      inkscape:window-x="1758"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g7023"
+     inkscape:current-layer="g6934"
      inkscape:snap-bbox="false"
      inkscape:bbox-paths="true"
      inkscape:snap-bbox-edge-midpoints="true"
@@ -199,7 +199,8 @@
        x1="62.95174"
        y1="233.96561"
        x2="552.01056"
-       y2="642.44788" />
+       y2="642.44788"
+       gradientTransform="matrix(1,0,0,0.86932788,0,77.672735)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient7155"
@@ -224,19 +225,10 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-117.39623,-209.62064)">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-       x="354.55255"
-       y="802.40839"
-       id="text16255"><tspan
-         sodipodi:role="line"
-         id="tspan16253"
-         x="354.55255"
-         y="802.40839" /></text>
     <g
        id="g7023"
-       transform="translate(54.945277,-23.844177)">
+       transform="translate(54.945277,-23.844177)"
+       inkscape:label="g7023">
       <g
          id="g1190"
          style="fill:url(#linearGradient7157);fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">
@@ -257,33 +249,23 @@
              style="fill:url(#linearGradient928);fill-opacity:1;stroke:#ffffff;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
              id="rect994"
              width="63.479313"
-             height="301.56619"
+             height="262.15991"
              x="200.84421"
-             y="292.84329"
+             y="332.24957"
              inkscape:path-effect="#path-effect1399"
-             d="m 200.84421,292.84329 h 63.47931 v 298.92039 a 2.6458,2.6458 135 0 1 -2.6458,2.6458 l -58.18771,0 a 2.6458,2.6458 45 0 1 -2.6458,-2.6458 z"
+             d="m 200.84421,332.24957 h 63.47931 v 259.51411 a 2.6458,2.6458 135 0 1 -2.6458,2.6458 l -58.18771,0 a 2.6458,2.6458 45 0 1 -2.6458,-2.6458 z"
              sodipodi:type="rect" />
-          <text
-             xml:space="preserve"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:397.364px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;fill:url(#linearGradient930);fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none"
-             x="301.24936"
-             y="576.99365"
+          <g
+             aria-label="D"
+             transform="scale(0.89738839,1.1143447)"
              id="text3330"
-             transform="scale(0.89738839,1.1143447)"><tspan
-               sodipodi:role="line"
-               id="tspan3328"
-               x="301.24936"
-               y="576.99365"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:397.364px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;fill:url(#linearGradient930);fill-opacity:1;stroke-width:1.00157;stroke-miterlimit:4;stroke-dasharray:none">D</tspan></text>
+             style="font-size:397.364px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, @wght=700';font-variation-settings:'wght' 700;fill:url(#linearGradient930)">
+            <path
+               d="M 334.23057,576.99365 V 298.83884 h 126.36176 q 45.2995,0 79.87017,17.48402 34.57066,17.08665 54.0415,48.08105 19.47084,30.99439 19.47084,73.51234 0,42.12058 -19.47084,73.51234 -19.47084,30.99439 -54.0415,48.47841 -34.57067,17.08665 -79.87017,17.08665 z m 64.37297,-52.84941 h 58.80988 q 27.81548,0 48.08104,-10.33147 20.66293,-10.72882 31.78912,-30.19966 11.52356,-19.47084 11.52356,-45.69686 0,-26.62339 -11.52356,-45.69686 -11.12619,-19.47084 -31.78912,-29.80231 -20.26556,-10.72882 -48.08104,-10.72882 h -58.80988 z"
+               id="path955" />
+          </g>
         </g>
       </g>
-      <rect
-         style="fill:#ffffff;stroke:none;stroke-width:1.07844"
-         id="rect1178"
-         width="67.438774"
-         height="16.805527"
-         x="198.86447"
-         y="292.86719" />
     </g>
   </g>
 </svg>

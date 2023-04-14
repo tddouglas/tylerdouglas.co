@@ -1,15 +1,17 @@
 <template>
 	<div class="mb-8 flex flex-row">
-		<image-generator
-			img-alt="Main Image"
-			width="100"
-			height="100"
-			class="mr-4 rounded-full"
-		></image-generator>
+		<div class="w-40">
+			<img
+				:src="profilePhoto"
+				alt="Profile Photo"
+				class=""
+				style="filter: invert(0); clip-path: circle(38%)"
+			/>
+		</div>
 		<div>
 			<h1 class="text-main self-center pt-2 text-4xl">Tyler Douglas</h1>
 			<p class="text-secondary">
-				Other Thing, Full-stack Developer & Enthusiast
+				Tinkerer, Full-stack Developer & Enthusiast
 			</p>
 			<router-link to="/" class="text-tertiary font-extralight">
 				tylerdouglas.co
@@ -60,16 +62,18 @@
 	<h2 class="text-main mb-2">CTFs</h2>
 	<div class="mb-6 grid grid-cols-3">
 		<div class="mb-8">
-			<p class="text-secondary">Google 2022</p>
+			<p class="text-secondary">Hacker101 CTF</p>
 		</div>
 		<div class="col-span-2">
-			<a href="https://github.com/tddouglas/googlectf2022"
-				><image-generator
-					img-alt="Google 2022 CTF Badge"
+			<a href="https://ctf.hacker101.com/ctf">
+				<img
+					src="https://www.hacker101.com/assets/images/favicon.png"
+					alt="Hacker101 CTF"
 					width="50"
 					class="rounded-full"
-				></image-generator
-			></a>
+					style="filter: invert(0)"
+				/>
+			</a>
 		</div>
 	</div>
 </template>
@@ -81,11 +85,14 @@ import ImageGenerator from "@/components/helper/ImageGenerator.vue"
 
 export default defineComponent({
 	name: "AboutMe",
-	components: { ImageGenerator, RouterLink },
+	components: { RouterLink },
 	props: {},
 	methods: {},
 	data() {
-		return {}
+		return {
+			profilePhoto:
+				"https://tylerdouglas-assets.s3.amazonaws.com/TylerDouglas_photo.avif"
+		}
 	}
 })
 </script>

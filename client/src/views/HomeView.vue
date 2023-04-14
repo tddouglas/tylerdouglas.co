@@ -8,9 +8,9 @@
 	<div>
 		<p class="text-secondary mb-6">
 			An Adyen engineer who loves working with tech and people! Film
-			enthusiast, cyber security dabbler, tinkerer and creator of all
-			things. I'm interested in the inner workings of most things - I
-			design and code beautifully simple things, and I love what I do.
+			enthusiast, cyber security dabbler, tinkerer and creator. I'm
+			interested in the inner workings of most things - I design and code
+			beautifully simple projects, and I love what I do.
 		</p>
 		<p class="text-secondary mb-6">
 			Thanks for checking out my website! Come here to learn about me, see
