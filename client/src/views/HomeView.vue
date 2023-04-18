@@ -17,30 +17,33 @@
 			some of the things I've been working on, or just hear my thoughts.
 		</p>
 	</div>
-	<div>
-		<span class="text-secondary">See more about me here</span>
-		<router-link to="/about">
-			<img
-				:src="rightArrow"
-				alt="right arrow"
-				class="bounce-right ml-4 inline-block"
-			/>
-		</router-link>
+	<div
+		class="relative mt-8 mb-32 flex justify-start md:mt-20 md:justify-center"
+	>
+		<PlusSelector :menu-items="menuItems" class="hidden md:block" />
+		<BouncingArrow class="block md:hidden" />
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
+import PlusSelector from "@/components/home/PlusSelector.vue"
+import BouncingArrow from "@/components/helper/BouncingArrow.vue"
 import rightArrow from "@/assets/images/right_arrow.svg"
 
 export default defineComponent({
 	name: "HomeView",
-	components: {},
-	props: {},
+	components: { PlusSelector, BouncingArrow },
 	methods: {},
 	data() {
 		return {
-			rightArrow: rightArrow
+			rightArrow: rightArrow,
+			menuItems: [
+				{ name: "About", path: "/about" },
+				{ name: "Projects", path: "/projects" },
+				{ name: "Contact", path: "/contact" },
+				{ name: "Random", path: "/projects/listener" }
+			]
 		}
 	}
 })
@@ -51,13 +54,13 @@ export default defineComponent({
 /*Main header static animation*/
 h1.main-header::before {
 	left: 2px;
-	text-shadow: blue -1px 0px;
+	text-shadow: blue -1px 0;
 	animation: 15s linear 0s infinite alternate-reverse none running noise-anim;
 }
 
 h1.main-header::after {
 	left: -2px;
-	text-shadow: red 3px 0px;
+	text-shadow: red 3px 0;
 	animation: 2s linear 0s infinite alternate-reverse none running noise-anim;
 }
 
@@ -65,8 +68,8 @@ h1.main-header::after {
 .main-header::after {
 	content: attr(data-text);
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 }
@@ -75,20 +78,20 @@ h1.main-header::after {
 	line-height: 1.2;
 	font-size: calc(3.275rem + 9px);
 	font-weight: 900;
-	margin: 2rem 0rem 1.5rem;
+	margin: 2rem 0 1.5rem;
 	position: relative;
 	letter-spacing: -1.1px;
 }
 
 .mark-accent {
 	color: inherit;
-	padding: 0px;
+	padding: 0;
 	background-color: rgba(0, 0, 0, 0);
 	background-attachment: scroll;
 	background-origin: padding-box;
 	background-clip: border-box;
 	background-repeat: no-repeat;
-	background-position: 0px 80%;
+	background-position: 0 80%;
 	position: relative;
 	background-size: 100% 0.3em;
 }
@@ -167,13 +170,5 @@ h1.main-header::after {
 	100% {
 		margin-left: 2rem;
 	}
-}
-
-.bounce-right {
-	margin-left: 1rem;
-	animation-name: bounce-right;
-	animation-duration: 0.5s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
 }
 </style>

@@ -11,6 +11,7 @@ module.exports = {
 		"@vue/eslint-config-prettier",
 		"prettier"
 	],
+	ignorePatterns: ["**/dist/*"],
 	plugins: ['@typescript-eslint'],
 	overrides: [
 		{

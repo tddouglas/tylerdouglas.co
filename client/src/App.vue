@@ -1,6 +1,7 @@
 <template>
 	<div
 		class="hover:lightMain-hover dark:hover:darkMain-hover container mx-auto max-w-screen-lg flex-auto px-2 font-body text-lightMain dark:text-darkMain md:px-6"
+		@mousemove="setMousePosition"
 	>
 		<TheNavbar />
 		<main class="flex min-h-[50vh] flex-col items-center">
@@ -17,6 +18,8 @@ import { defineComponent } from "vue"
 import { RouterView } from "vue-router"
 import TheNavbar from "@/components/navbar/TheNavbar.vue"
 import TheFooter from "@/components/footer/TheFooter.vue"
+import { usePlusMenuStore } from "@/stores/plusMenu"
+import { mapStores } from "pinia"
 
 export default defineComponent({
 	components: { TheNavbar, TheFooter, RouterView },
@@ -37,7 +40,14 @@ export default defineComponent({
 	methods: {
 		setDarkMode() {
 			document.documentElement.classList.add("dark")
+		},
+		setMousePosition(event: MouseEvent) {
+			this.plusMenuStore.mousePosX = event.clientX
+			this.plusMenuStore.mousePosY = event.clientY
 		}
+	},
+	computed: {
+		...mapStores(usePlusMenuStore)
 	},
 	data() {
 		return {}

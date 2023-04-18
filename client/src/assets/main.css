@@ -34,6 +34,23 @@
 		transition-timing-function: ease-out;
 	}
 
+	/*Make text wiggle on hover*/
+	.plus-wiggle:hover {
+		animation: wiggle 0.5s infinite ease-in-out;
+	}
+
+	@keyframes wiggle {
+		0% {
+			transform: rotate(-5deg);
+		}
+		50% {
+			transform: rotate(5deg);
+		}
+		100% {
+			transform: rotate(-5deg);
+		}
+	}
+
 	/*default fonts parings */
 	.text-main {
 		@apply text-lightMain dark:text-darkMain
