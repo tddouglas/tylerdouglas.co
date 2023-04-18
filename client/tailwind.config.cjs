@@ -4,7 +4,10 @@ module.exports = {
 	darkMode: "class",
 	theme: {
 		colors: {
-			underline: "rgba(0,186,126,0.20)"
+			underline: "rgba(0,186,126,0.20)",
+			green: "rgba(0,186,126,1)",
+			white: "rgba(255,255,255,1)",
+			black: "rgb(24, 24, 24, 1)"
 		},
 		backgroundColor: ({ theme }) => ({
 			light: "rgba(255,255,255,0.9)",

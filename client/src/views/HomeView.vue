@@ -7,40 +7,44 @@
 	</h1>
 	<div>
 		<p class="text-secondary mb-6">
-			An Adyen engineer who loves working with tech and people! Film
-			enthusiast, cyber security dabbler, tinkerer and creator of all
-			things. I'm interested in the inner workings of most things - I
-			design and code beautifully simple things, and I love what I do.
+			An Adyen engineihuer who loves working with tech and people! Film
+			enthusiast, cyber security dabbler, tinkerer and creator. I'm
+			interested in the inner workings of most things - I design and code
+			beautifully simple projects, and I love what I do.
 		</p>
 		<p class="text-secondary mb-6">
 			Thanks for checking out my website! Come here to learn about me, see
 			some of the things I've been working on, or just hear my thoughts.
 		</p>
 	</div>
-	<div>
-		<span class="text-secondary">See more about me here</span>
-		<router-link to="/about">
-			<img
-				:src="rightArrow"
-				alt="right arrow"
-				class="bounce-right ml-4 inline-block"
-			/>
-		</router-link>
+	<div
+		class="relative mt-8 mb-32 flex justify-start md:mt-20 md:justify-center"
+	>
+		<PlusSelector :menu-items="menuItems" class="hidden md:block" />
+		<BouncingArrow class="block md:hidden" />
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
+import PlusSelector from "@/components/home/PlusSelector.vue"
+import BouncingArrow from "@/components/helper/BouncingArrow.vue"
 import rightArrow from "@/assets/images/right_arrow.svg"
 
 export default defineComponent({
 	name: "HomeView",
-	components: {},
+	components: { PlusSelector, BouncingArrow },
 	props: {},
 	methods: {},
 	data() {
 		return {
-			rightArrow: rightArrow
+			rightArrow: rightArrow,
+			menuItems: [
+				{ name: "About", path: "/about" },
+				{ name: "Projects", path: "/projects" },
+				{ name: "Contact", path: "/contact" },
+				{ name: "Random", path: "/projects/listener" }
+			]
 		}
 	}
 })
