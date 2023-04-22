@@ -48,14 +48,12 @@ export default defineComponent({
 	methods: {
 		changeColorMode() {
 			console.log("Changing color mode")
-			if (!this.darkMode) {
+			if (!document.documentElement.classList.contains("dark")) {
 				document.documentElement.classList.add("dark")
 				localStorage.setItem("colorPreference", "dark")
-				this.darkMode = true
 			} else {
 				document.documentElement.classList.remove("dark")
 				localStorage.setItem("colorPreference", "light")
-				this.darkMode = false
 			}
 		},
 		toggleMobileMenu() {
@@ -64,8 +62,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			lightDarkIcon: lightDarkIcon,
-			darkMode: false
+			lightDarkIcon: lightDarkIcon
 		}
 	}
 })
