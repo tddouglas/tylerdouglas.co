@@ -12,7 +12,8 @@ module.exports = {
 		backgroundColor: ({ theme }) => ({
 			light: "rgba(255,255,255,0.9)",
 			dark: "rgb(24, 24, 24, 1)",
-			underline: "rgba(0,186,126,0.90)"
+			underline: "rgba(0,186,126,0.90)",
+			loader: "rgba(209,213,219,0.9)"
 		}),
 		textColor: ({ theme }) => ({
 			// light & dark combined into 1 in main.css

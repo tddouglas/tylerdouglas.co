@@ -14,6 +14,7 @@
 			class="hover:cursor-pointer md:m-2 md:inline-block"
 			@click="changeColorMode"
 		>
+			<!-- TODO: bug- DarkLight toggle taking 2 clicks instead of 1 on first toggle -->
 			<img
 				:src="lightDarkIcon"
 				alt="light dark toggle"
