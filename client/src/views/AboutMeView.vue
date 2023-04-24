@@ -2,20 +2,12 @@
 	<div class="">
 		<div class="mb-8 flex flex-row">
 			<div class="w-40">
-				<!-- TODO: Would be nice to switch to composition API and use Suspense tag for skeleton loader. Investigate using
-Composition & Options components together -->
-				<img
-					:src="profilePhoto"
-					alt="Profile Photo"
-					class=""
-					style="filter: invert(0); clip-path: circle(38%)"
-					@load="imageLoaded"
-				/>
-				<SkeletonLoader
-					v-if="!profilePhotoLoaded"
-					shape="circle"
-					class="mx-7 h-[106px]"
-				/>
+				<Suspense>
+					<AsyncImageLoader :image-url="profilePhoto" />
+					<template #fallback>
+						<SkeletonLoader shape="circle" class="mx-7 h-[106px]" />
+					</template>
+				</Suspense>
 			</div>
 			<div>
 				<h1 class="text-main self-center pt-2 text-4xl">
@@ -97,21 +89,15 @@ Composition & Options components together -->
 import { defineComponent } from "vue"
 import { RouterLink } from "vue-router"
 import SkeletonLoader from "@/components/helper/SkeletonLoader.vue"
+import AsyncImageLoader from "@/components/helper/AsyncImageLoader.vue"
 export default defineComponent({
 	name: "AboutMe",
-	components: { RouterLink, SkeletonLoader },
+	components: { AsyncImageLoader, RouterLink, SkeletonLoader },
 	props: {},
-	methods: {
-		imageLoaded() {
-			console.log("Image loaded")
-			this.profilePhotoLoaded = true
-		}
-	},
 	data() {
 		return {
 			profilePhoto:
-				"https://tylerdouglas-assets.s3.amazonaws.com/TylerDouglas_photo.avif",
-			profilePhotoLoaded: false
+				"https://tylerdouglas-assets.s3.amazonaws.com/TylerDouglas_photo.avif"
 		}
 	}
 })
