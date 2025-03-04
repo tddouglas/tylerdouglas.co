@@ -6,7 +6,7 @@ const { Pool } = poolPkg
 export default new Pool({
 	user: "root",
 	host: "localhost",
-	database: "tinyboiz",
-	password: "y4DNksFDZ*DtmpyCV2d2",
+	database: "",
+	password: "",
 	port: 5432
 })
